@@ -1,0 +1,167 @@
+/* Catanghal, Justine Chollo | CYB 201 */
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #f8fafc;
+    --accent: #38bdf8;
+    --border: rgba(255,255,255,0.1);
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+
+.pill-time-container {
+    display: flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.4); /* Dark translucent background */
+    border: 1px solid var(--accent);
+    border-radius: 50px;
+    padding: 8px 24px;
+    gap: 15px; /* Space between elements */
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.1);
+}
+
+.pill-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pill-clock {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums; /* Prevents text jumping when seconds change */
+    line-height: 1;
+}
+
+.pst-badge {
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.pill-divider {
+    width: 1px;
+    height: 30px;
+    background: var(--border);
+    margin: 0 5px;
+}
+
+.pill-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.pill-day {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text);
+}
+
+.pill-date {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.current-time { text-align: right; color: var(--accent); }
+
+/* Grid Layout */
+.section-title { margin: 40px 0 20px; font-size: 1.5rem; border-left: 4px solid var(--accent); padding-left: 15px; }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* Card Styling */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
+}
+.card:hover { transform: translateY(-5px); }
+.card-img { height: 140px; background-size: cover; background-position: center; position: relative; }
+.overlay { position: absolute; inset: 0; background: linear-gradient(to top, var(--card), transparent); }
+.flight-no { position: absolute; bottom: 10px; left: 15px; font-weight: 700; font-size: 1.2rem; }
+
+.card-body { padding: 20px; }
+.badge { font-size: 10px; padding: 4px 8px; border-radius: 6px; background: rgba(255,255,255,0.1); text-transform: uppercase; }
+h3 { margin: 10px 0 5px; color: var(--accent); }
+.airline { font-size: 13px; opacity: 0.7; margin-bottom: 20px; }
+
+.time-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.time-info label { display: block; font-size: 10px; text-transform: uppercase; opacity: 0.5; }
+.time-info strong { font-size: 13px; }
+
+.card-footer { 
+    border-top: 1px solid var(--border); 
+    padding-top: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 11px; 
+    opacity: 0.8;
+}
+.tz-label { color: var(--accent); font-weight: 600; }
+
+/* Mini Timezone Section */
+.world-clock {
+    background: rgba(255,255,255,0.03);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+/* Status Logic Colors */
+.status-short { 
+    background: #10b981 !important; 
+    color: white; 
+}
+.status-long { 
+    background: #f43f5e !important; 
+    color: white; 
+}
+.status-other { 
+    background: rgba(255,255,255,0.1) !important; 
+    color: #94a3b8; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 60px;
+    opacity: 0.6;
+    font-size: 14px;
+}
